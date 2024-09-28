@@ -3,26 +3,10 @@ from typing import Optional
 from datetime import date
 from pydantic import BaseModel
 
+from app.users.router import router as users_router
+from app.bookings.router import router as bookings_router
+
 app = FastAPI()
 
-
-@app.get("/hotels")
-def get_hotels(
-    location: str,
-    date_from: date,
-    date_to: date,
-    has_spa: Optional[bool] = None,
-    stars: Optional[int] = Query(None, ge=1, le=5)
-):
-    return "Ok"
-
-
-class BookingSchema(BaseModel):
-    room_id: int 
-    date_from: date
-    dat_to: date
-
-@app.post("/bookings")
-def add_booking(booking_data: BookingSchema):
-    return "Ok Ok"
-
+app.include_router(users_router)
+app.include_router(bookings_router)
