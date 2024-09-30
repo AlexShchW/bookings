@@ -7,6 +7,10 @@ class BookingException(HTTPException):
 
     def __init__(self):
         super().__init__(status_code=self.status_code, detail=self.detail)
+
+class BookingCannotBeDeletedException(BookingException):
+    status_code=status.HTTP_409_CONFLICT
+    detail="Бронирование не было удалено"
     
 
 class UserAlreadyExistsException(BookingException):
@@ -36,4 +40,8 @@ class IncorrectTokenFormatException(BookingException):
 
 class UserNotPresentException(BookingException):
     status_code=status.HTTP_401_UNAUTHORIZED
+
+class RoomCannotBeBookedException(BookingException):
+    status_code=status.HTTP_409_CONFLICT
+    detail="Не осталось свободных номеров"
 
