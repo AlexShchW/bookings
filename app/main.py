@@ -10,6 +10,14 @@ from app.hotels.rooms.router import router as rooms_router
 from app.pages.router import router as pages_router
 from app.images.router import router as images_router
 
+
+from fastapi_cache import FastAPICache
+from fastapi_cache.backends.redis import RedisBackend
+from fastapi_cache.decorator import cache
+
+from redis import asyncio as aioredis
+
+
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="app/static"), "static")
@@ -34,3 +42,10 @@ app.add_middleware(
     allow_headers=["Content-Type", "Set-Cookie", "Access-Control-Allow-Headers",
     "Access-Control-Allow-Origin", "Authorization"]
 )
+
+
+
+@app.on_event("startup")
+def startup():
+    redis = aioredis.from_url("redis://localhost:6379", encoding="utf8", decode_responses=False)
+    FastAPICache.init(RedisBackend(redis), prefix="cache")
