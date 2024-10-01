@@ -13,8 +13,8 @@ router = APIRouter(prefix="/hotels",
 async def get_hotels(location: str,
                      date_from: date,
                      date_to: date) -> list[HotelsWithVacantRoomsSchema]:
-    res = await HotelsDAO.get_available_hotels(location, date_from, date_to)
-    return res
+    hotels = await HotelsDAO.get_available_hotels(location, date_from, date_to)
+    return hotels
 
 
 @router.get("/id/{hotel_id}")
