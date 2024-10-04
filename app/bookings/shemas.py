@@ -26,7 +26,7 @@ class BookingWithRoomInfoSchema(BaseModel):
     total_cost: int
     total_days: int
     name: str
-    description: str
+    description: Optional[str]
     services: Any
     image_id: Optional[int]
 

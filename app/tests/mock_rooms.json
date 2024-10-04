@@ -1,0 +1,101 @@
+[
+    {
+        "hotel_id": 1,
+        "name": "Улучшенный в террасой и видом на озеро",
+        "description": "Невероятной красоты номер",
+        "price": 24500,
+        "services": ["Wi-Fi", "Кондиционер"],
+        "quantity": 5,
+        "image_id": 7
+    },
+    {
+        "hotel_id": 1,
+        "name": "Делюкс Плюс",
+        "description": "Лучший номер отеля",
+        "price": 22450,
+        "services": ["Wi-Fi", "Кондиционер"],
+        "quantity": 10,
+        "image_id": 5
+    },
+    {
+        "hotel_id": 2,
+        "name": "Номер на 2-х",
+        "description": "Красота неописуемая",
+        "price": 4570,
+        "services": [],
+        "quantity": 15,
+        "image_id": 9
+    },
+    {
+        "hotel_id": 2,
+        "name": "Номер на 3-ч",
+        "description": null,
+        "price": 4350,
+        "services": [],
+        "quantity": 8,
+        "image_id": 10
+    },
+    {
+        "hotel_id": 3,
+        "name": "Номер полулюкс семейный",
+        "description": null,
+        "price": 7080,
+        "services": ["Холодильник"],
+        "quantity": 20,
+        "image_id": 11
+    },
+    {
+        "hotel_id": 3,
+        "name": "2-комнатный люкс",
+        "description": null,
+        "price": 9815,
+        "services": [],
+        "quantity": 10,
+        "image_id": 12
+    },
+    {
+        "hotel_id": 4,
+        "name": "Стандартный двухместный",
+        "description": null,
+        "price": 4300,
+        "services": ["Wi-Fi", "Холодильник"],
+        "quantity": 20,
+        "image_id": 13
+    },
+    {
+        "hotel_id": 4,
+        "name": "Стандартный плюс",
+        "description": null,
+        "price": 4700,
+        "services": ["Wi-Fi","Холодильник", "Ванная", "Кондиционер"],
+        "quantity": 35,
+        "image_id": 14
+    },
+    {
+        "hotel_id": 5,
+        "name": "Номер стандарт с 2 кроватями",
+        "description": null,
+        "price": 5000,
+        "services": [],
+        "quantity": 15,
+        "image_id": 15
+    },
+    {
+        "hotel_id": 5,
+        "name": "Номер полулюкс",
+        "description": null,
+        "price": 8000,
+        "services": [],
+        "quantity": 7,
+        "image_id": 16
+    },
+    {
+        "hotel_id": 6,
+        "name": "Стандарт",
+        "description": null,
+        "price": 7777,
+        "services": [],
+        "quantity": 77,
+        "image_id": 77
+    }
+]

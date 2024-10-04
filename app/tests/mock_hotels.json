@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Cosmos Collection Altay Resort",
+        "location": "Алтай, Майминский, Урлу-Аспак, Лесхозная, 20",
+        "services": ["Wi-Fi", "Бассейн", "Парковка", "Кондиционер"],
+        "rooms_quantity": 15,
+        "image_id": 1
+    },
+    {
+        "name": "Skala",
+        "location": "Алтай, Майминский, Барангол, Чуйская, 40а",
+        "services": ["Wi-Fi", "Парковка"],
+        "rooms_quantity": 23,
+        "image_id": 2
+    },
+    {
+        "name": "Ару-Кёль",
+        "location": "Алтай, Атрыбаш, Телецкая, 44А",
+        "services": ["Парковка"],
+        "rooms_quantity": 30,
+        "image_id": 3
+    },
+    {
+        "name": "Госиница Сыктывкар",
+        "location": "Коми, Сыктывкар, Коммунистическая 67",
+        "services": ["Wi-Fi", "Парковка", "Тренажерный зал"],
+        "rooms_quantity": 55,
+        "image_id": 4
+    },
+    {
+        "name": "Palace",
+        "location": "Коми, Сыктывкар, Первомайская 62",
+        "services": ["Wi-Fi", "Парковка", "Кондиционер"],
+        "rooms_quantity": 22,
+        "image_id": 5
+    },
+    {
+        "name": "Bridge Resort",
+        "location": "поселок Сириус, Фигурная улица, 45",
+        "services": ["Wi-Fi", "Парковка", "Кондиционер", "Тренажерный зал"],
+        "rooms_quantity": 45,
+        "image_id": 6
+    }
+]

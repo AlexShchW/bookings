@@ -22,6 +22,7 @@ from redis import asyncio as aioredis
 from app.database import engine
 from app.admin.auth import authentication_backend
 
+from app.config import settings
 
 app = FastAPI()
 
@@ -53,7 +54,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 def startup():
-    redis = aioredis.from_url("redis://localhost:6379", encoding="utf8", decode_responses=False)
+    redis = aioredis.from_url(f"redis://{settings.REDIS_HOST}:{settings.REDIS_PORT}", encoding="utf8", decode_responses=False)
     FastAPICache.init(RedisBackend(redis), prefix="cache")
 
 
