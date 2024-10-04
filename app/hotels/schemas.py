@@ -1,4 +1,5 @@
 from typing import Any, Optional
+
 from pydantic import BaseModel
 
 
@@ -10,10 +11,10 @@ class HotelsWithVacantRoomsSchema(BaseModel):
     rooms_quantity: int
     image_id: Optional[int]
     rooms_left: int
-    
+
     class Config:
         orm_mode = True
-        
+
 
 class HotelSchema(BaseModel):
     id: int
@@ -22,7 +23,6 @@ class HotelSchema(BaseModel):
     services: Any
     rooms_quantity: int
     image_id: Optional[int]
-    
+
     class Config:
         orm_mode = True
-

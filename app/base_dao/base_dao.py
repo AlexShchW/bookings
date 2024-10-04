@@ -1,6 +1,7 @@
+from sqlalchemy import insert, select
+
 from app.database import async_session_maker
 
-from sqlalchemy import insert, select
 
 class BaseDAO:
     model = None
@@ -12,7 +13,6 @@ class BaseDAO:
             result = await session.execute(query)
             return result.scalar_one_or_none()
 
-
     @classmethod
     async def find_one_or_none(cls, **filter_contitions):
         async with async_session_maker() as session:
@@ -20,14 +20,13 @@ class BaseDAO:
             result = await session.execute(query)
             return result.scalar_one_or_none()
 
-
     @classmethod
     async def find_all(cls, **filter_contitions):
         async with async_session_maker() as session:
             query = select(cls.model).filter_by(**filter_contitions)
             result = await session.execute(query)
             return result.scalars().all()
-        
+
     @classmethod
     async def add(cls, **data):
         async with async_session_maker() as session:

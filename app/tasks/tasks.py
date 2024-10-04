@@ -1,6 +1,8 @@
-from app.tasks.celery import celery_app
-from PIL import Image
 from pathlib import Path
+
+from PIL import Image
+
+from app.tasks.celery import celery_app
 
 
 @celery_app.task

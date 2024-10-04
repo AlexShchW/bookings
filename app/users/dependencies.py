@@ -1,15 +1,24 @@
 from datetime import datetime
+
 from fastapi import Depends, Request
-from jose import jwt, JWTError
+from jose import JWTError, jwt
+
 from app.config import settings
-from app.exceptions import IncorrectTokenFormatException, TokenAbsentException, TokenExpiredException, UserNotPresentException
+from app.exceptions import (
+    IncorrectTokenFormatException,
+    TokenAbsentException,
+    TokenExpiredException,
+    UserNotPresentException,
+)
 from app.users.dao import UsersDAO
+
 
 def get_token(request: Request):
     token = request.cookies.get("booking_access_token")
     if not token:
         raise TokenAbsentException
     return token
+
 
 async def get_current_user(token: str = Depends(get_token)):
     try:
@@ -22,7 +31,7 @@ async def get_current_user(token: str = Depends(get_token)):
     user_id = payload.get("sub")
     if not user_id:
         raise UserNotPresentException
-    
+
     user = await UsersDAO.find_by_id(int(user_id))
     if not user:
         raise UserNotPresentException

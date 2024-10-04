@@ -1,4 +1,5 @@
 from typing import Any, Optional
+
 from pydantic import BaseModel
 
 
@@ -13,7 +14,6 @@ class RoomsOfHotelSchema(BaseModel):
     image_id: Optional[int]
     total_cost: int
     rooms_left: int
-    
+
     class Config:
         orm_mode = True
-
