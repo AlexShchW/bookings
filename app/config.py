@@ -6,6 +6,8 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     MODE: Literal["DEV", "TEST", "PROD"]
 
+    LOG_LEVEL: Literal["INFO", "DEBUG", "WARNING", "CRITICAL", "ERROR"]
+
     DB_HOST: str
     DB_PORT: int
     DB_USER: str
