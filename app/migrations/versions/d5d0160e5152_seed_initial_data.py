@@ -20,7 +20,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade():
     sql_file_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', 'initial_db_data.sql')
-    with open(sql_file_path, 'r') as f:
+    with open(sql_file_path, 'r', encoding='utf-8') as f:
         sql_content = f.read()
 
     sql_statements = sql_content.split(';')
