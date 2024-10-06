@@ -20,7 +20,6 @@ from app.logger import logger
 from app.pages.router import router as pages_router
 from app.users.router import router as users_router
 
-
 app = FastAPI()
 
 
@@ -34,6 +33,7 @@ app.include_router(images_router)
 app.include_router(pages_router)
 
 app.mount("/static", StaticFiles(directory="app/static"), "static")
+
 
 @app.on_event("startup")
 def startup():
