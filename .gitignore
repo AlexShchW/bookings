@@ -1,5 +1,6 @@
 venv/
 .env
 .env-non-dev
+.env-deploy
 __pycache__/
 *.py[cod]
