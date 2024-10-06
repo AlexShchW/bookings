@@ -1,4 +1,4 @@
-from pathlib import Path
+import os
 
 from PIL import Image
 
@@ -7,11 +7,18 @@ from app.tasks.celery import celery_app
 
 @celery_app.task
 def process_pic(
-    path: str,
+    input_path: str,
 ):
-    im_path = Path(path)
-    im = Image.open(im_path)
-    im_resized_1000_500 = im.resize((1000, 500))
-    im_resized_200_100 = im.resize((200, 100))
-    im_resized_1000_500.save(f"app/static/images/resized_1000_500_{im_path.name}")
-    im_resized_200_100.save(f"app/static/images/resized_200_100_{im_path.name}")
+    base_folder = os.path.dirname(input_path)
+    
+    with Image.open(input_path) as img:
+        resized_img = img.convert('RGB').resize((1000, 500))
+        output_path = os.path.join(base_folder, 
+                                  f"resized_1000_500_{os.path.basename(input_path)}")
+        resized_img.save(output_path, format='WEBP', quality=90)
+
+    with Image.open(input_path) as img:
+        resized_img = img.convert('RGB').resize((200, 100))
+        output_path = os.path.join(base_folder, 
+                                  f"resized_200_100_{os.path.basename(input_path)}")
+        resized_img.save(output_path, format='WEBP', quality=90)
