@@ -1,4 +1,4 @@
-"""import os
+import os
 
 from PIL import Image
 
@@ -23,4 +23,4 @@ def process_pic(
         output_path = os.path.join(
             base_folder, f"resized_200_100_{os.path.basename(input_path)}"
         )
-        resized_img.save(output_path, format="WEBP", quality=90)"""
+        resized_img.save(output_path, format="WEBP", quality=90)
